@@ -1,6 +1,23 @@
-page-way-point-map {
-    .sebm-google-map-container {
-        height: 300px;
+.ios, .md {
+ 
+    way-point-map {
+ 
+        .scroll {
+            height: 100%
+        }
+ 
+        #map {
+            width: 100%;
+            height: 65%;
+        }
+ 
+        ion-card {
+            max-height: 200px;
+            overflow: scroll;
+            position: absolute;
+            z-index: 1;
+        }
+ 
     }
-
+ 
 }
