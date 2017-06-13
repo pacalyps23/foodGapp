@@ -132,10 +132,10 @@ export class VolStartScreenPage {
 
 
   markerInfo(marker) {
-
+console.log(marker.position+ "HERE");
     marker.addListener('click', () => {
-      var position = new google.maps.LatLng(marker.latitude, marker.longitude);
-      let popover = this.popoverCtrl.create(PopupInfoWindowPage, { marker: marker, position: position });
+      // var position = new google.maps.LatLng(marker.latitude, marker.longitude);
+      let popover = this.popoverCtrl.create(PopupInfoWindowPage, { marker: marker, position: marker.position });
       popover.present({
 
       });
