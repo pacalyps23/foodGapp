@@ -18,24 +18,33 @@ export class WayPointMapPage {
   @ViewChild('directionsPanel') directionsPanel: ElementRef;
   //map: any;
 
-  title: string = 'Pickup Details';
+  pageTitle: string = 'Pickup Details';
+  restaurantName: string;
   buttonText: string = 'Accept';
   buttonHandler: Function = this.confirm;
 
-  currentLocation: Object = new google.maps.LatLng(39.7472871, -75.54704149999999);
-  pickupLocation: Object = new google.maps.LatLng(39.7472871, -75.4);
-  dropOffLocation: Object = new google.maps.LatLng(39.77, -75.5570417);
+  //currentLocation: Object = new google.maps.LatLng(39.7472871, -75.54704149999999);
+
+  // Array of lat, lng instead of LatLng object so it can be used
+  // with native navigation
+  currentLocation = []
+  pickupLocation: Object =  { 
+    googleMaps: new google.maps.LatLng(39.7472871, -75.4),
+    navigator: [39.7472871, -75.4]
+  };
+  dropOffLocation: Object = {
+    googleMaps: new google.maps.LatLng(39.77, -75.5570417),
+    navigator: [39.77, -75.5570417]
+  };
+  location: any;
   pickup: any;
   // currentLocation: any;
   // pickupLocation: any;
   // dropOffLocation: any;
 
-
   quantity: any;
   perishable: any;
   phone: any;
-  location: any;
-
   zoom: number = 13;
   loader: any;
 
@@ -50,27 +59,22 @@ export class WayPointMapPage {
               private mapComponent: MapComponent, 
               private pickupService: PickupService) {
 
-                
-
-
     this.quantity = this.navParams.get('quantity');
+    this.restaurantName = this.navParams.get('title');
     this.perishable = this.navParams.get('perishable');
     this.phone = this.navParams.get('phone');
-    this.location = this.navParams.get('location');
-    console.log(this.phone);
-    console.log(this.location);
-    //this.pickupLocation = this.navParams.get('location');
-
-    //this.dropOffLocation = new google.maps.LatLng(this.navParams.get('location'));
     console.log("THIS PICKUPLOCATION")
-    console.log(typeof this.pickupLocation)
-    
-              
+    this.location = this.navParams.get('location')
+    console.log(this.location)
+
+    this.pickupLocation['navigator'] = this.location;
+    console.log(typeof this.location)
+             
   }
 
-  navigate(start, end) {
+  navigateTo(end) {
     let options: LaunchNavigatorOptions = {
-        start: start
+        start: this.currentLocation
     };
     
     this.launchNavigator.navigate(end, options)
@@ -82,57 +86,20 @@ export class WayPointMapPage {
 
   confirm() {
     // navigate from current location to pickup
-    this.navCtrl.push(WaypointMap2Page);
-    this.navigate('Philadelphia, PA', 'Baltimore, MD');
+    this.navCtrl.push(WaypointMap2Page, {
+      location: this.pickupLocation,
+      finalLocation: this.dropOffLocation
+    });
+    this.navigateTo(this.pickupLocation['navigator']);
      
   }
 
-  pickupConfirmed() {
-    //TODO: update pickup object to indicate the pickup was successfully made
-
-    // navigate to dropoff location
-    this.navigate('Wilmington, DE', 'Philadelphia, PA')
-  }
-
-  // ngOnChanges(changes: SimpleChanges) {
-  //   if (changes['pickup']) {
-  //       this.payload = this.pickup.quantity;
-  //       this.locationName = this.pickup.destination.destinationName;
-  //       this.phone = this.pickup.destination.destinationPhone;
-  //       this.mapComponent;
-  //   }
-  // }
-
-  ionViewDidLoad() {
-    
+  ionViewDidLoad() {  
     navigator.geolocation.getCurrentPosition((position) => {
-      this.currentLocation = new google.maps.LatLng(
-          position.coords.latitude,
-          position.coords.longitude
-        );
 
-        this.mapComponent
-        
-
-
-
-      // this.pickupService.retrieveData((data) => {
-      //   this.pickup = data[0];
-      //   console.log(this.pickup)
-      //   this.currentLocation = new google.maps.LatLng(
-      //     position.coords.latitude,
-      //     position.coords.longitude
-      //   );
-      //   this.pickupLocation = new google.maps.LatLng(
-      //     this.pickup.destination.destinationLocation.lat,
-      //     this.pickup.destination.destinationLocation.lng
-      //   );
-      //this.dropOffLocation = new google.maps.LatLng(39.77, -75.5570417);
-      //   console.log(this.pickupLocation);
-      //   console.log(this.dropOffLocation);
-      //   //this.mapComponent;
-      // });
-  
+      // current location used for native navigation only
+      this.currentLocation = [ position.coords.latitude, position.coords.longitude ]
+      this.mapComponent
     })
   }
 }

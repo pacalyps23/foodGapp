@@ -23,11 +23,6 @@ export class MapComponent {
  
   }
 
-  printSomething() {
-      console.log("Somethinf at least")
-      console.log(this.destination);
-  }
-
   getLoader() {
     let loader = this.loadingCtrl.create({
       content: "Loading. . ."
@@ -83,7 +78,7 @@ export class MapComponent {
       //directionsDisplay.setPanel(this.directionsPanel.nativeElement);
       let wypts = [];
       if (this.waypoint) {
-        this.makeMarker(this.waypoint, 'Dropoff Location')
+        this.makeMarker(this.waypoint, '../assets/img/bread.png')
         wypts.push({
           location: this.waypoint,
           stopover: true
@@ -99,8 +94,8 @@ export class MapComponent {
           
           if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(res);
-            this.makeMarker(currentPosition, 'You are here')
-            this.makeMarker(this.destination, 'Pickup Location')
+            this.makeMarker(currentPosition, null)
+            this.makeMarker(this.destination, '../assets/img/truck3.png')
             this.loader.dismiss();
           } else {
             console.warn(status);
@@ -111,18 +106,17 @@ export class MapComponent {
     }
   }
 
-  makeMarker(position, title) {
+  makeMarker(position, icon) {
     new google.maps.Marker({
       position: position,
       map: this.map,
-      //icon: '../wharer/icon.jpg',
-      title: title
+      icon: icon,
+      size: new google.maps.Size(20, 20),
+      //title: title
     });
     }
 
   ngAfterViewInit() {
-      console.log("THIS>WAYPOINT")
-      console.log(this.waypoint);
     this.loader = this.getLoader();
     this.loader.present();
     this.loadMap();

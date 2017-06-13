@@ -28,7 +28,6 @@ export class User {
 @Injectable()
 export class AuthService {
   currentUser: User;
-  data: any;
 
   constructor(public http: Http) {
     console.log('Hello AuthServiceProvider Provider');
