@@ -17,7 +17,7 @@ loading: Loading;
 registerCredentials = {email: '', password: ''};
 
 constructor(private navCtrl: NavController, private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController, private menuCtrl:MenuController){
-  //this.menuCtrl.enable(false);
+  this.menuCtrl.enable(false);
 }
 
 ionViewDidLoad() {
@@ -37,7 +37,7 @@ ionViewDidLoad() {
     this.showLoading()
     this.auth.login(this.registerCredentials).subscribe(allowed => {
       if (allowed) {
-        //this.menuCtrl.enable(true);
+        this.menuCtrl.enable(true);
         this.navCtrl.setRoot(SignupTypePage);
       } else {
         this.showError("Access Denied");
