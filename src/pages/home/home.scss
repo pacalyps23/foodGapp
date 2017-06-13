@@ -9,6 +9,7 @@
         }
         .toolbar-title {
             padding-left: 0;
+           
         }
         .homeBackground {
             background: url("../assets/img/rsz_pic6.jpg");
@@ -97,18 +98,22 @@
             }
             ion-header .header {
                 background: rgba(0, 0, 0, 0.17);
+                 display:none;
             }
-            ion-navbar.toolbar {
+            ion-navbar.toolbar .toolbar-md {
                 background: rgba(0, 0, 0, 0.17);
+                 display:none;
             }
             .bar {
                 background-image: none !important;
             }
             .toolbar {
                 background: rgba(0, 0, 0, 0.17);
+                 display:none!important;
             }
             .toolbar-md {
                 background: rgba(0, 0, 0, 0.17)!important;
+                 display:none;
             }
             .register-btn {
                 color: #ffffff;

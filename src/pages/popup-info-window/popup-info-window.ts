@@ -33,8 +33,8 @@ export class PopupInfoWindowPage {
     this.quantity = navParams.data.marker.quantity;
     this.perishable = navParams.data.marker.perishable;
     this.phone = navParams.data.marker.phone;
-    this.location = this.navParams.get('position');
-
+    this.location = this.navParams.get("position");
+    console.log(this.location + "HERE POP UP");
   }
 
   ionViewDidLoad() {
@@ -46,17 +46,17 @@ export class PopupInfoWindowPage {
   }
 
   pushPage() {
-  
+
     this.navCtrl.push(WayPointMapPage, {
       title: this.title,
       quantity: this.quantity,
       perishable: this.perishable,
       phone: this.phone,
       location: this.location,
-      marker:this.marker
+      marker: this.marker
     });
 
-      this.viewCtrl.dismiss();
+    this.viewCtrl.dismiss();
   }
 
 

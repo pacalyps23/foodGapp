@@ -133,7 +133,9 @@ export class VolStartScreenPage {
   markerInfo(marker) {
 
     marker.addListener('click', () => {
-      var position = new google.maps.LatLng(marker.latitude, marker.longitude);
+      var position = marker.position;
+      //console.log(marker.position+ "THIS");
+      //console.log(position+" VOL SCREEN HERE TOO");
       let popover = this.popoverCtrl.create(PopupInfoWindowPage, { marker: marker, position: position });
       popover.present({
 
