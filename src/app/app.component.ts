@@ -21,7 +21,7 @@ import { HealthPartnerPage } from '../pages/health-partner/health-partner';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = VolStartScreenPage;
+  rootPage: any = HomePage;
 
 
   // rootPage: any = ProgressPage;
