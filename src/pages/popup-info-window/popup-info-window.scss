@@ -4,18 +4,15 @@
         $popover-ios-background: black;
         $popover-md-background: black;
         .popupWindow {
-// background:rgba(0, 0, 0, 0.64);
-
-
+            // background:rgba(0, 0, 0, 0.64);
         }
-        
     }
     #title {
         text-align: center;
         font-size: 20px;
         width: auto;
         height: auto;
-            border-bottom: 1px solid #d29d10;
+        border-bottom: 1px solid #d29d10;
     }
     #quantity {
         text-align: center;
@@ -34,7 +31,8 @@
     .popover {
         background: rgba(0, 0, 0, 0.64);
     }
-    .title {} .popover-content {
+    .title {}
+    .popover-content {
         color: white;
         background: rgba(0, 0, 0, 0.64);
         border-radius: 5px;
@@ -54,17 +52,14 @@
         padding-bottom: 0;
         background-color: #d29d10;
     }
-    #spacer{
-  padding-top:4px;
-}
-.popover-content{
-  top: 264.5px;
-    left: 50px !important;
-    transform-origin: left top 0px;
-    width: 20em;
-    
-  
-}
-
-    // .header{background:rgba(0, 0, 0, 0.64);}
+    #spacer {
+        padding-top: 4px;
+    }
+    .popover-content {
+        // position: relative;
+        top: inherit;
+        left: inherit;
+        transform-origin: inherit;
+        width: 20em;
+    } // .header{background:rgba(0, 0, 0, 0.64);}
 }

@@ -1,75 +1,74 @@
-.ios, .md {
-page-health-partner {
-
-
-@font-face {
-font-family: MyFont;
-src: url("../../assets/fonts/Open_Sans/OpenSans-Regular.ttf");
-}
-
- .navBar{}
-
-.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios{display:none;background: rgba(67, 137, 35, 0.62);}
-
-.header-md .toolbar-background-md, .footer-md .toolbar-background-md{display:none;background: rgba(67, 137, 35, 0.62);}
-.toolbar-title-md{text-align: center;}
-
-.scroll-content {    padding-top: 0px!important;
-    padding-bottom: 0px!important;}
- 
+.ios,
+.md {
+    page-health-partner {
+        @font-face {
+            font-family: MyFont;
+            src: url("../../assets/fonts/Open_Sans/OpenSans-Regular.ttf");
+        }
+        .navBar {}
+        .header-ios .toolbar-background-ios,
+        .footer-ios .toolbar-background-ios {
+            display: none;
+            background: rgba(67, 137, 35, 0.62);
+        }
+        .header-md .toolbar-background-md,
+        .footer-md .toolbar-background-md {
+            display: none;
+            background: rgba(67, 137, 35, 0.62);
+        }
+        .toolbar-title-md {
+            text-align: center;
+        }
+        .scroll-content {
+            padding-top: 0px!important;
+            padding-bottom: 0px!important;
+        }
         .scroll {
             height: 100%
         }
- 
-        #map {
-            width: 100%;
-            height: 45%;
-                margin-bottom: 46px;
-        }
- 
+     
         ion-card {
             max-height: 200px;
             overflow: scroll;
             position: absolute;
             z-index: 1;
         }
-
-        .titleImg{    width: 4em;}
- 
-    }
- .progressContent{
-        //  background: #438923;
+    
+        .progressContent {
+            //  background: #438923;
             background: #080808;
- }
- .scroll-content{
-     border:1.6px solid #d29d10;
- }
-#mapSpacing{
-    padding-top:16%;
-}
-
-.thanks{
-        font-size: 25px;
-}
-#driverinfo{
-        color: white;
-        text-align: center;
+        }
+        .scroll-content {
+            border: 1.6px solid #d29d10;
+        }
+        #mapSpacing {
+            padding-top: 16%;
+        }
+        .thanks {
+            font-size: 25px;
+        }
+        #driverinfo {
+            color: white;
+            text-align: center;
             font-size: 29px;
-}
+        }
+        .donorProgress {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        #driverinfo p {
+            margin: 0;
+        }
+        .toolbar-title {
+            padding-left: 0 !important;
+        }
 
-.donorProgress{
-        position: fixed;
-    bottom: 0;
-    left: 0;
-        width: 100%;
-}
-
-#driverinfo p{
-    margin:0;
-}
-
-.toolbar-title{
-    padding-left:0 !important;
-}
-
+         .titleImg {
+            width: 4em;
+            margin-top: -11px;
+            
+        }
+    }
 }

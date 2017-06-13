@@ -21,9 +21,10 @@ import { HealthPartnerPage } from '../pages/health-partner/health-partner';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = 'HomePage';
+  rootPage: any = VolStartScreenPage;
 
-  //rootPage: any = SignupTypePage;
+
+  // rootPage: any = ProgressPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {

@@ -14,16 +14,16 @@
 </ion-header>
 <ion-content padding>  
     <!--<div #map id="map"></div> -->
-    <map-component [destination]="dropOffLocation" [waypoint]="pickupLocation"></map-component>
+    <map-component [destination]="dropOffLocation['googleMaps']" [waypoint]="pickupLocation['googleMaps']"></map-component>
 
   <ion-card-content>
     <div [hidden]="!confirmed" #directionsPanel></div>
   </ion-card-content>
 <div [hidden]="confirmed" id="pickupDetails">
-  <p> {{ locationName }} </p>
-  <p>Payload:{{ payload }} </p>
-  <p>Pickup Address: {{ address }}</p>
-  <p>Pickup Phone: {{phone }}</p>
+  <p> {{ restaurantName }} </p>
+  <p>Payload: {{ quantity }} </p>
+  <p>Perishable? {{ perishable }} </p>
+  <p>Pickup Phone: {{ phone }}</p>
 </div>
 
   <button ion-button (click)='confirm()'>{{ buttonText }}</button>

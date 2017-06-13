@@ -14,7 +14,7 @@
     .toolbar-title{padding-left:0;}
 
     .header{
-    background:rgba(0, 0, 0, 0.82);border-bottom: 3px solid #d29d10 !important;    border-radius: 2px;
+    background:rgba(0, 0, 0, 0.42);border-bottom: 3px solid #d29d10 !important;    border-radius: 2px;
     }
     .navBar{}
 
@@ -25,6 +25,22 @@
 
     .titleImg{    width: 4em;}
 
+
+ .signupTypeBackground {
+            background: url("../assets/img/pic7.jpg") no-repeat;
+            text-align: center;
+            position: relative;
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+                color: aliceblue;
+        }
+.scroll-content {
+    background: rgba(67, 137, 35, 0.18);
+}
 
   }
 

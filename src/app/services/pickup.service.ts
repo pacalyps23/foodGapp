@@ -46,6 +46,7 @@ export class PickupService {
 
   }
 
+
   getPickupByPickupid(pickupid: number) {
     this.retrieveData((data) => {
       return data.filter((item) => item["pickupid"] === pickupid);

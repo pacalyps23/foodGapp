@@ -1,80 +1,70 @@
-.ios, .md {
-page-vol-start-screen {
-
-$toolbar-background-ios:black;
-$popover-ios-background: black;
-$popover-md-background:	black;
-
-#map{
-    height:100%;
-    widows: 100%;
-}
-
-
-
-.fullscreen {
-  ion-navbar-section,
-  ion-tabbar-section,
-  ion-content-section {
-    position: absolute;
-    width: 100%;
-  }
-  }
-
-  ion-navbar-section {
-    z-index: 1000;
-    top: 0;
-  }
-
-  ion-tabbar-section {
-    z-index: 1000;
-    bottom: 0;
-  }
-
-  ion-content-section {
-    z-index: 10;
-  }
-
-  .scroll-content {
-      margin-top:0!important;
-    padding-top: $toolbar-ios-height + 20px; // extra padding for the ios statusbar
-    padding-bottom: $toolbar-ios-height; // Padding for the Tabbbar (only needed if tabbar is used)
-  }
-  #mapContent{}
+.ios,
+.md {
+    page-vol-start-screen {
+        #map {
+            height: 100%;
+            widows: 100%;
+        }
+        .fullscreen {
+            ion-navbar-section,
+            ion-tabbar-section,
+            ion-content-section {
+                position: absolute;
+                width: 100%;
+            }
+        }
     
-  .ion-header {}
-
-.fixed-content{margin-top:0px !important;}
-
-  .toolbar-title{padding-left:0;}
-
-.header{
-background:rgba(0, 0, 0, 0.82);border-bottom: 3px solid #d29d10 !important;    border-radius: 2px;
-}
-.navBar{}
-
-.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios{display:none;background: rgba(67, 137, 35, 0.62);}
-
-.header-md .toolbar-background-md, .footer-md .toolbar-background-md{display:none;background: rgba(67, 137, 35, 0.62);}
-.toolbar-title-md{text-align: center;}
-
-.scroll-content {    padding-top: 0px!important;
-    padding-bottom: 0px!important;}
-
-
-.titleImg{    width: 4em;}
-
-.bar-button-default, .bar-button-clear, .bar-button{
-  color:white;
-}
-
-.button{
-        position: fixed;
-    bottom: 0;
-    left: 0;
-    display:none;
-        width: 50%;
-}
-
-}
+        ion-navbar-section {
+            z-index: 1000;
+            top: 0;
+        }
+        ion-tabbar-section {
+            z-index: 1000;
+            bottom: 0;
+        }
+        ion-content-section {
+            z-index: 10;
+        }
+        .scroll-content {
+            margin-top: 0!important;
+            padding-top: $toolbar-ios-height + 20px; // extra padding for the ios statusbar
+            padding-bottom: $toolbar-ios-height; // Padding for the Tabbbar (only needed if tabbar is used)
+        }
+        #mapContent {}
+        .ion-header {}
+        .fixed-content {
+            margin-top: 0px !important;
+        }
+        .toolbar-title {
+            padding-left: 0;
+        }
+        .header {
+            background: rgba(0, 0, 0, 0.82);
+            border-bottom: 3px solid #d29d10 !important;
+            border-radius: 2px;
+        }
+        .navBar {}
+        .toolbar-title-md {
+            text-align: center;
+        }
+        .scroll-content {
+            padding-top: 0px!important;
+            padding-bottom: 0px!important;
+        }
+        .titleImg {
+            width: 4em;
+        }
+        .bar-button-default,
+        .bar-button-clear,
+        .bar-button {
+            color: white;
+        }
+        .button {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            display: none;
+            width: 50%;
+        }
+    }
 }

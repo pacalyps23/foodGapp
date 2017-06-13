@@ -3,7 +3,8 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Location } from '../../shared/location';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
-import {CompletePage} from '../complete/complete';
+import { CompletePage } from '../complete/complete';
+import { PopupInfoWindowPage } from '../popup-info-window/popup-info-window';
 /**
  * Generated class for the ProgressPage page.
  *
@@ -11,7 +12,7 @@ import {CompletePage} from '../complete/complete';
  * on Ionic pages and navigation.
  */
 
-
+declare var window;
 declare var google: any;
 @IonicPage()
 @Component({
@@ -39,7 +40,8 @@ export class ProgressPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private launchNavigator: LaunchNavigator) {
-       setTimeout(function(){navCtrl.push(CompletePage)},5000);
+      console.log(navParams.data);
+     setTimeout(function(){navCtrl.push(CompletePage)},15000);
   }
 
 
@@ -70,7 +72,8 @@ export class ProgressPage {
 
     let mapOptions = {
       center: LatLng,
-      zoom: 20,
+      zoom: 14,
+      disableDefaultUI: true,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
 
@@ -95,18 +98,25 @@ export class ProgressPage {
     }, (res, status) => {
       if (status == google.maps.DirectionsStatus.OK) {
         directionsDisplay.setDirections(res);
-       
+
       } else {
         console.warn(status);
       }
     })
   }
 
-
+  driverNumber: string = "tel:7184963016";
+  callDriver() {
+    window.location = this.driverNumber;
+  }
 
   ionViewDidLoad() {
-    this.loadMap();
+
     this.startNavigating();
+  }
+
+  ionViewWillEnter() {
+    this.loadMap();
   }
 }
 

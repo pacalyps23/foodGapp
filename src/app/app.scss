@@ -14,3 +14,61 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+
+.toolbar-title{
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+   
+}
+.toolbar-ios ion-title {
+    /* left: 0; */
+    /* top: 0; */
+    /* padding-left: 90px; */
+    /* padding-right: 90px; */
+    /* padding-top: 0; */
+    /* padding-bottom: 1px; */
+    /* position: absolute; */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* -webkit-transform: translateZ(0); */
+    /* transform: translateZ(0); */
+    /* pointer-events: none; */
+}
+
+.toolbar-title {
+    padding-left: 12px;
+    /* padding-right: 12px; */
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+    /* text-align: center; */
+    /* width: auto; */
+}
+
+.scroll-content{
+        background: #438923;
+}
+
+.toolbar-background {
+
+    background: #438923;
+}
+
+button{
+    padding: 7px!important;
+}
+
+.toolbar{
+        text-align: center;
+    width: auto;
+    padding-right: 44px;
+}

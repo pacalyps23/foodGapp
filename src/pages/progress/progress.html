@@ -12,21 +12,23 @@
 </ion-header>
 
 
-<ion-content class="progressContent" padding>
+<ion-content class="progressContent">
 
 
   <ion-card-content id="driverinfo">
     <div class="thanks">Thank you for being a partner!</div>
- 
 
-  <p>The volunteer</p>
-  <p> Shawn</p>
-  <p>will be here in </p>
-  <p>32 mins</p>
-    </ion-card-content>
+
+    <p>The volunteer</p>
+    <p> Shawn</p>
+    <p>will be here in </p>
+    <p>32 mins</p>
+  </ion-card-content>
 
   <div id="mapSpacing"></div>
   <div #map id="map"></div>
-
+  <div id="mapSpacing"></div>
+  <!--<a ion-button href="tel:"{{number}} >Call me 1 </a>
+    <a ion-button href="tel:123 456 789" >Call me 5</a>-->
   <button class="donorProgress" ion-button (click)='callDriver()'>Contact Driver</button>
 </ion-content>

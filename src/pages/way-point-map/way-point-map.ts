@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, SimpleChanges } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { WaypointMap2Page } from '../waypoint-map2/waypoint-map2';
 import { MapComponent } from '../../components/map/map.component';
@@ -18,20 +18,39 @@ export class WayPointMapPage {
   @ViewChild('directionsPanel') directionsPanel: ElementRef;
   //map: any;
 
-  title: string = 'Pickup Details';
+  pageTitle: string = 'Pickup Details';
+  restaurantName: string;
   buttonText: string = 'Accept';
   buttonHandler: Function = this.confirm;
 
-  currentLocation: Object = new google.maps.LatLng(39.7472871, -75.54704149999999);
-  pickupLocation: Object = new google.maps.LatLng(39.7472871, -75.4);
-  dropOffLocation: Object = new google.maps.LatLng(39.77, -75.5570417);
+  //currentLocation: Object = new google.maps.LatLng(39.7472871, -75.54704149999999);
+
+  // Array of lat, lng instead of LatLng object so it can be used
+  // with native navigation
+  currentLocation = []
+  pickupLocation: Object =  { 
+    googleMaps: new google.maps.LatLng(39.7472871, -75.4),
+    navigator: [39.7472871, -75.4]
+  };
+  dropOffLocation: Object = {
+    googleMaps: new google.maps.LatLng(39.77, -75.5570417),
+    navigator: [39.77, -75.5570417]
+  };
+  location: any;
+  pickup: any;
+  // currentLocation: any;
+  // pickupLocation: any;
+  // dropOffLocation: any;
+
+  quantity: any;
+  perishable: any;
+  phone: any;
   zoom: number = 13;
   loader: any;
-  // lat: number;
-  // lng: number;
+
   confirmed: boolean = false;
-  payload: string = this.navParams.get('quantity');
-  locationName: string = this.navParams.get('title');
+  payload: string;
+  locationName: string;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -39,11 +58,23 @@ export class WayPointMapPage {
               private launchNavigator: LaunchNavigator, 
               private mapComponent: MapComponent, 
               private pickupService: PickupService) {
+
+    this.quantity = this.navParams.get('quantity');
+    this.restaurantName = this.navParams.get('title');
+    this.perishable = this.navParams.get('perishable');
+    this.phone = this.navParams.get('phone');
+    console.log("THIS PICKUPLOCATION")
+    this.location = this.navParams.get('location')
+    console.log(this.location)
+
+    this.pickupLocation['navigator'] = this.location;
+    console.log(typeof this.location)
+             
   }
 
-  navigate(start, end) {
+  navigateTo(end) {
     let options: LaunchNavigatorOptions = {
-        start: start
+        start: this.currentLocation
     };
     
     this.launchNavigator.navigate(end, options)
@@ -55,28 +86,20 @@ export class WayPointMapPage {
 
   confirm() {
     // navigate from current location to pickup
-    this.navCtrl.push(WaypointMap2Page)
-    this.navigate('Philadelphia, PA', 'Baltimore, MD');
+    this.navCtrl.push(WaypointMap2Page, {
+      location: this.pickupLocation,
+      finalLocation: this.dropOffLocation
+    });
+    this.navigateTo(this.pickupLocation['navigator']);
      
   }
 
-  pickupConfirmed() {
-    //TODO: update pickup object to indicate the pickup was successfully made
-
-    // navigate to dropoff location
-    this.navigate('Wilmington, DE', 'Philadelphia, PA')
-  }
-
-  ionViewDidLoad() {
-    this.mapComponent;
-    
+  ionViewDidLoad() {  
     navigator.geolocation.getCurrentPosition((position) => {
 
-      let pickups = this.pickupService.retrieveData((data) => {
-            console.log("PICKUPS")
-      console.log(data);
-      });
-  
+      // current location used for native navigation only
+      this.currentLocation = [ position.coords.latitude, position.coords.longitude ]
+      this.mapComponent
     })
   }
 }

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/throw';
+
 
 /*
   Generated class for the AuthServiceProvider provider.
@@ -10,44 +12,72 @@ import 'rxjs/add/operator/map';
   for more info on providers and Angular 2 DI.
 */
 export class User {
-  name: string;
+  fname: string;
+  lname: string;
   email: string;
+  phone: string;
 
-  constructor(name: string, email: string) {
-    this.name = name;
+  constructor(fname: string, lname: string, email: string, phone: string) {
+    this.fname = fname;
+    this.phone = phone;
     this.email = email;
+    this.lname = lname;
   }
 }
 
 @Injectable()
 export class AuthService {
   currentUser: User;
+  data: any;
 
   constructor(public http: Http) {
     console.log('Hello AuthServiceProvider Provider');
   }
 
+
   public login(credentials) {
-    if (credentials.email === null || credentials.password === null) {
+    if (credentials.email === null || credentials.password === null)
+    {
       return Observable.throw("Please insert credentials");
     } else {
+
       return Observable.create(observer => {
-        // At this point make a request to your backend to make a real check!
-        let access = (credentials.password === "pass" && credentials.email === "email");
-        this.currentUser = new User('Simon', 'saimon@devdactic.com');
-        observer.next(access);
-        observer.complete();
-      });
+        this.http.get('../../assets/data/users.json')
+        .map((response) => response.json())
+        .subscribe((data) => {
+            for(let user of data)
+            {
+              if(credentials.password === user.password && credentials.email === user.email)
+              {
+                this.currentUser = new User(user.fname, user.lname, user.email, user.phone);
+                observer.next(true);
+                observer.complete();
+              }
+            }
+            observer.next(false);
+            observer.complete();
+          });
+        });
+      }
     }
-  }
-  public register(credentials) {
-     if (credentials.email === null || credentials.password === null) {
+
+
+
+  public register(credentials)
+  {
+     if (credentials.email === null || credentials.password === null)
+     {
        return Observable.throw("Please insert credentials");
-     } else {
-       // At this point store the credentials to your backend!
+     }
+     else if(credentials.password !== credentials.password2)
+     {
+       return Observable.throw("Password doesn't match");
+     }
+     else
+     {//ready for backend storage
        return Observable.create(observer => {
-         observer.next(true);
-         observer.complete();
+        observer.next(true);
+        observer.complete();
        });
      }
    }

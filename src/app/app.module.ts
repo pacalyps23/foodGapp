@@ -4,9 +4,10 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { Deeplinks } from '@ionic-native/deeplinks';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+import { Push, PushObject, PushOptions } from "@ionic-native/push";
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { HomePageModule } from '../pages/home/home.module'
 import { ListPage } from '../pages/list/list';
 import { PendingPage } from '../pages/pending/pending';
 import { WaitingPage } from '../pages/waiting/waiting';
@@ -22,7 +23,7 @@ import { WaypointMap2Page } from '../pages/waypoint-map2/waypoint-map2';
 import { PopupInfoWindowPage } from '../pages/popup-info-window/popup-info-window';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { SignupTypePage } from '../pages/signup-type/signup-type';
-
+import { HomePage } from '../pages/home/home';
 import { MapComponent } from '../components/map/map.component';
 import { SetAvailabilityPage } from '../pages/set-availability/set-availability';
 import { HealthPartnerPage } from '../pages/health-partner/health-partner';
@@ -35,7 +36,7 @@ import { AuthService } from '../app/services/auth-service';
 import { PickupService } from '../app/services/pickup.service';
 
 @NgModule({
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     MyApp,
     ListPage,
@@ -58,12 +59,14 @@ import { PickupService } from '../app/services/pickup.service';
   ],
   imports: [
     BrowserModule,
+    HomePageModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    HomePage,
     ListPage,
     PendingPage,
     WaitingPage,

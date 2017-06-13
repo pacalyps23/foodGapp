@@ -1,50 +1,66 @@
-data: [
+ [
   {
     "id": 0,
-    "username": "shawn",
+    "fname": "Shawn",
+    "lname": "McGee",
     "password": "number1vol",
-    "name": "Shawn",
     "phone": 2675555555,
-    "email": "none.of.ya.business@gmail.com"
+    "email": "business@gmail.com"
   },
   {
     "id": 1,
-    "username": "dan_zf",
+    "fname": "Dan",
+    "lname": "Ziggy",
     "password": "number1vol",
-    "name": "Ziggy",
     "phone": 2675555555,
     "email": "none.of.ya.business@gmail.com"
   },
   {
     "id": 2,
-    "username": "apacolypse",
+    "fname": "Luis",
+    "lname": "Garcia",
     "password": "whyigrab2",
-    "name": "Luis",
     "phone": 2675555555,
-    "email": "none.of.ya.business@gmail.com"
+    "email": "pacalyps23@frontier.com"
   },
   {
     "id": 3,
-    "username": "camerons",
+    "fname": "Cameron",
+    "lname": "Sima",
     "password": "1817670551",
-    "name": "Cameron",
     "phone": 2675555555,
     "email": "none.of.ya.business@gmail.com"
   },
   {
     "id": 4,
-    "username": "monkeys",
+    "fname": "Sarah",
+    "lname": "Weisser",
     "password": "seriouslyMONKEYS",
-    "name": "Sarah",
     "phone": 2675555555,
     "email": "none.of.ya.business@gmail.com"
   },
   {
     "id": 5,
-    "username": "tonytonitone",
+    "fname": "Anthony",
+    "lname": "tonytonitone",
     "password": "NYStateOfMind",
-    "name": "Anthony",
     "phone": 2675555555,
     "email": "none.of.ya.business@gmail.com"
+  },
+  {
+    "id": 6,
+    "fname": "Admin",
+    "lname": "FoodBank",
+    "password": "radiojulius",
+    "phone": 2675555555,
+    "email": "foodGapp@zipcode.com"
+  },
+  {
+    "id": 7,
+    "fname": "Admin",
+    "lname": "FoodBank",
+    "password": "pass",
+    "phone": 2675555555,
+    "email": "email"
   }
 ]

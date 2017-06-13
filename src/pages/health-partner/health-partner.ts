@@ -8,6 +8,7 @@ import {DeliveredPage} from '../delivered/delivered';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
+declare var window;
 @IonicPage()
 @Component({
   selector: 'page-health-partner',
@@ -22,5 +23,12 @@ export class HealthPartnerPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HealthPartnerPage');
   }
+
+  driverNumber: string = "tel:7184963016";
+ 
+  callDriver() {
+    window.location = this.driverNumber;
+  }
+
 
 }
