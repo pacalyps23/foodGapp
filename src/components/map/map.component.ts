@@ -78,7 +78,7 @@ export class MapComponent {
       //directionsDisplay.setPanel(this.directionsPanel.nativeElement);
       let wypts = [];
       if (this.waypoint) {
-        this.makeMarker(this.waypoint, 'Dropoff Location')
+        this.makeMarker(this.waypoint, '../assets/img/bread.png')
         wypts.push({
           location: this.waypoint,
           stopover: true
@@ -94,8 +94,8 @@ export class MapComponent {
           
           if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(res);
-            this.makeMarker(currentPosition, 'You are here')
-            this.makeMarker(this.destination, 'Pickup Location')
+            this.makeMarker(currentPosition, null)
+            this.makeMarker(this.destination, '../assets/img/truck3.png')
             this.loader.dismiss();
           } else {
             console.warn(status);
@@ -106,13 +106,13 @@ export class MapComponent {
     }
   }
 
-  makeMarker(position, title) {
+  makeMarker(position, icon) {
     new google.maps.Marker({
       position: position,
       map: this.map,
-      icon: '../assets/img/restaurantIcon.png',
+      icon: icon,
       size: new google.maps.Size(20, 20),
-      title: title
+      //title: title
     });
     }
 
