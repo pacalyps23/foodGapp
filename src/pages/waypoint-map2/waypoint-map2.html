@@ -11,7 +11,7 @@
 </ion-header>
 
 <ion-content padding>
-  <map-component [destination]="pickupLocation"></map-component>
+  <map-component [destination]="location['googleMaps']"></map-component>
   <button ion-button (click)="buttonHandler()" >{{ buttonText}}</button>
   <button ion-button (click)="continueNavigating()" >Continue Navigating</button>
 </ion-content>
