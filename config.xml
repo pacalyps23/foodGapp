@@ -114,4 +114,7 @@
     </plugin>
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="^3.2.2" />
+    <plugin name="platforms">
+        <variable name="undefined" value="undefined" />
+    </plugin>
 </widget>

@@ -23,11 +23,6 @@ export class MapComponent {
  
   }
 
-  printSomething() {
-      console.log("Somethinf at least")
-      console.log(this.destination);
-  }
-
   getLoader() {
     let loader = this.loadingCtrl.create({
       content: "Loading. . ."
@@ -115,14 +110,13 @@ export class MapComponent {
     new google.maps.Marker({
       position: position,
       map: this.map,
-      //icon: '../wharer/icon.jpg',
+      icon: '../assets/img/restaurantIcon.png',
+      size: new google.maps.Size(20, 20),
       title: title
     });
     }
 
   ngAfterViewInit() {
-      console.log("THIS>WAYPOINT")
-      console.log(this.waypoint);
     this.loader = this.getLoader();
     this.loader.present();
     this.loadMap();
