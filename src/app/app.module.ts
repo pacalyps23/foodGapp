@@ -7,7 +7,7 @@ import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-na
 import { Push, PushObject, PushOptions } from "@ionic-native/push";
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { HomePageModule } from '../pages/home/home.module'
 import { ListPage } from '../pages/list/list';
 import { PendingPage } from '../pages/pending/pending';
 import { WaitingPage } from '../pages/waiting/waiting';
@@ -23,7 +23,7 @@ import { WaypointMap2Page } from '../pages/waypoint-map2/waypoint-map2';
 import { PopupInfoWindowPage } from '../pages/popup-info-window/popup-info-window';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { SignupTypePage } from '../pages/signup-type/signup-type';
-
+import { HomePage } from '../pages/home/home';
 import { MapComponent } from '../components/map/map.component';
 import { SetAvailabilityPage } from '../pages/set-availability/set-availability';
 import { HealthPartnerPage } from '../pages/health-partner/health-partner';
@@ -39,7 +39,6 @@ import { PickupService } from '../app/services/pickup.service';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     MyApp,
-    HomePage,
     ListPage,
     PendingPage,
     WaitingPage,
@@ -56,11 +55,11 @@ import { PickupService } from '../app/services/pickup.service';
     MapComponent,
     SetAvailabilityPage,
     HealthPartnerPage,
-    SignupTypePage,
-    HomePage
+    SignupTypePage
   ],
   imports: [
     BrowserModule,
+    HomePageModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
   ],
@@ -83,8 +82,7 @@ import { PickupService } from '../app/services/pickup.service';
     SignupTypePage,
     SetAvailabilityPage,
     HealthPartnerPage,
-    SignupTypePage,
-    HomePage
+    SignupTypePage
 
   ],
   providers: [

@@ -115,7 +115,7 @@ export class MapComponent {
     new google.maps.Marker({
       position: position,
       map: this.map,
-      //icon: icon,
+      //icon: '../wharer/icon.jpg',
       title: title
     });
     }

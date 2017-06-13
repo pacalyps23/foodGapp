@@ -22,16 +22,14 @@ export class WayPointMapPage {
   buttonText: string = 'Accept';
   buttonHandler: Function = this.confirm;
 
-  // currentLocation: Object = new google.maps.LatLng(39.7472871, -75.54704149999999);
-  // pickupLocation: Object = new google.maps.LatLng(39.7472871, -75.4);
-  // dropOffLocation: Object = new google.maps.LatLng(39.77, -75.5570417);
+  currentLocation: Object = new google.maps.LatLng(39.7472871, -75.54704149999999);
+  pickupLocation: Object = new google.maps.LatLng(39.7472871, -75.4);
+  dropOffLocation: Object = new google.maps.LatLng(39.77, -75.5570417);
   pickup: any;
   // currentLocation: any;
   // pickupLocation: any;
   // dropOffLocation: any;
-  currentLocation: Object = new google.maps.LatLng(39.7472871, -75.54704149999999);
-  pickupLocation: Object = new google.maps.LatLng(39.7472871, -75.4);
-  dropOffLocation: Object = new google.maps.LatLng(39.77, -75.5570417);
+
 
   quantity: any;
   perishable: any;
@@ -52,6 +50,8 @@ export class WayPointMapPage {
               private mapComponent: MapComponent, 
               private pickupService: PickupService) {
 
+                
+
 
     this.quantity = this.navParams.get('quantity');
     this.perishable = this.navParams.get('perishable');
@@ -60,6 +60,7 @@ export class WayPointMapPage {
     console.log(this.phone);
     console.log(this.location);
     //this.pickupLocation = this.navParams.get('location');
+
     //this.dropOffLocation = new google.maps.LatLng(this.navParams.get('location'));
     console.log("THIS PICKUPLOCATION")
     console.log(typeof this.pickupLocation)
@@ -81,7 +82,7 @@ export class WayPointMapPage {
 
   confirm() {
     // navigate from current location to pickup
-    this.navCtrl.push(WaypointMap2Page)
+    this.navCtrl.push(WaypointMap2Page);
     this.navigate('Philadelphia, PA', 'Baltimore, MD');
      
   }
@@ -126,7 +127,7 @@ export class WayPointMapPage {
       //     this.pickup.destination.destinationLocation.lat,
       //     this.pickup.destination.destinationLocation.lng
       //   );
-      //   this.dropOffLocation = new google.maps.LatLng(39.77, -75.5570417);
+      //this.dropOffLocation = new google.maps.LatLng(39.77, -75.5570417);
       //   console.log(this.pickupLocation);
       //   console.log(this.dropOffLocation);
       //   //this.mapComponent;

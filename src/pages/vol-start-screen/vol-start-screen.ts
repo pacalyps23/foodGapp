@@ -66,20 +66,21 @@ export class VolStartScreenPage {
   displayGoogleMap() {
     this.geolocation.getCurrentPosition().then(position => {
       this.loader.dismiss();
-      let zipCode = new google.maps.LatLng(39.746323, -75.563192);
-      // let current = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      // let zipCode = new google.maps.LatLng( 39.746323, -75.563192);
+      let current = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       let mapOptions = {
-        center: zipCode,
+        center: current,
         disableDefaultUI: true,
         zoom: 14,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
 
       this.map = new google.maps.Map(this.mapContainer.nativeElement, mapOptions);
-      this.myMarker(zipCode);
+      this.myMarker(current);
 
       const markers = function () {
         this.getMarkers();
+        // this.loader.dismiss();
       }
       setTimeout(markers.bind(this), 1000);
 
@@ -140,7 +141,7 @@ export class VolStartScreenPage {
       popover.present({
 
       });
-
+      
     });
 
   }
@@ -154,20 +155,19 @@ export class VolStartScreenPage {
       console.log();
       // var position2 = new google.maps.LatLng(marker.latitude, marker.longitude);
       var position = new google.maps.LatLng(marker.donor.donorLocation.lat, marker.donor.donorLocation.lng);
-      console.log(position)
+    console.log(position)
       var restaurantMarkerClick = new google.maps.Marker({
         position: position,
         title: marker.donor.donorName,
         quantity: marker.quantity,
         perishable: marker.isPerishable,
         latitude: marker.latitude,
-        pickupId: marker.donor.pickupid,
+        pickupId:marker.donor.pickupid,
         longitude: marker.longitude,
-        phone: marker.donor.donorPhone,
         animation: google.maps.Animation.DROP
       });
 
-      console.log(marker.donor.donorPhone);
+      console.log();
       restaurantMarkerClick.setMap(this.map);
       this.markerInfo(restaurantMarkerClick);
 

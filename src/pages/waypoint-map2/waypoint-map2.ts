@@ -21,6 +21,7 @@ export class WaypointMap2Page {
 
 
   pickupLocation: Object = new google.maps.LatLng(39.7472871, -75.4);
+
   buttonText: string = 'Pickup Complete?'
   buttonHandler = this.pickupConfirmed;
 
@@ -28,11 +29,26 @@ export class WaypointMap2Page {
               public navParams: NavParams,
               public mapComponent: MapComponent,
               public launchNavigator: LaunchNavigator) {
+
+      if (this.navParams.data.location) {
+        this.pickupLocation = this.navParams.data.location;
+      }
+      if (this.navParams.data.buttonText) {
+        this.buttonText = this.navParams.data.buttonText;
+      }
+      if (this.navParams.data.buttonHandler) {
+        this.buttonHandler = this.navParams.data.buttonHandler;
+      }
   }
 
   pickupConfirmed() {
-    this.buttonText = "DropOff Complete?"
-    this.buttonHandler = this.dropOffComplete
+    this.navCtrl.push(WaypointMap2Page, {
+      location: new google.maps.LatLng(39.77, -75.5570417),
+      buttonText: "Dropoff Complete?",
+      buttonHandler: this.dropOffComplete
+    });
+    //this.buttonText = "DropOff Complete?"
+    //this.buttonHandler = this.dropOffComplete
     this.continueNavigating();
   }
 
