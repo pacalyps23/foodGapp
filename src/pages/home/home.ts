@@ -28,6 +28,11 @@ ionViewDidLoad() {
       this.navCtrl.push(SignupPage);
   }
 
+  public goHome()
+  {
+    this.navCtrl.push(SignupTypePage);
+  }
+
   public login() {
     this.showLoading()
     this.auth.login(this.registerCredentials).subscribe(allowed => {

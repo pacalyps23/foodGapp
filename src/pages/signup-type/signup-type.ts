@@ -22,14 +22,23 @@ import { SignupPage } from '../signup/signup';
 
 
 export class SignupTypePage {
-  email = 'none';
-  name = 'guest';
+  email = 'N/A';
+  name = 'Guest';
 
 
   constructor(private navCtrl: NavController, private auth: AuthService) {
     let info = this.auth.getUserInfo();
-    this.email = info['email'];
-    this.name = info['fname'];
+    if(info == undefined)
+    {
+      this.email;
+      this.name;
+    }
+    else{
+
+      this.email = info['email'];
+      this.name = info['fname'];
+
+    }
 
   }
 
