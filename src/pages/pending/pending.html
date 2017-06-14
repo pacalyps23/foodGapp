@@ -9,20 +9,20 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>FoodGapp</ion-title>
+    <ion-title> <img class="titleImg" src="assets/img/foodbank-logo.png"></ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="pendingBackground" padding>
   <div padding align="center">
     <h1>Your pickup has been posted!</h1>
   </div>
   <div padding align="center">
     <h2>Contacting volunteers to drive pick up...</h2>
   </div>
-  
+  <button class="fakepopup" (click)="triggerPopUp()"></button>
   <div padding align="center">
     <img src="https://foodbankofde.files.wordpress.com/2011/11/007.jpg" img style="border:4px solid black"/>
   </div>

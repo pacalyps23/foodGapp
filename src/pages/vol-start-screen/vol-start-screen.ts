@@ -119,14 +119,6 @@ export class VolStartScreenPage {
   }
 
   loadPeople() {
-    // this.pickupService.retrieveData((data) => {
-    //   this.addMarkersToMap(data);
-    // });
-
-    // this.pickupService.retrieveData(this.data)
-    // .then(data => {
-    //   this.info = data;
-    // });
   }
 
 

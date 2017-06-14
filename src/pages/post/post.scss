@@ -1,3 +1,66 @@
-page-post {
-
+.ios,
+.md {
+   page-post {
+        .scroll {
+            height: 100%
+        }
+        #map {
+            width: 100%;
+            height: 65%;
+        }
+        ion-card {
+            max-height: 200px;
+            overflow: scroll;
+            position: absolute;
+            z-index: 1;
+        }
+        .titleImg {
+            width: 4em;
+            margin-top: -11px;
+        }
+        .header {
+            background: rgba(0, 0, 0, 0.42);
+            border-bottom: 3px solid #d29d10 !important;
+            border-radius: 2px;
+        }
+        #pickupDetails {
+            text-align: center;
+            font-size: initial;
+            color: white;
+        }
+        .card-content-md {
+            padding-bottom: 0;
+        }
+        .button {
+            width: 100%;
+        }
+        .postBackground {
+            background: url("../assets/img/pic9.jpg");
+            text-align: center;
+            position: relative;
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .scroll-content {
+            background: rgba(0, 0, 0, 0.44);
+            color: white;
+            font-family: -webkit-body;
+            font-size: 33px;
+        }
+        .toolbar-background {
+            background: none;
+        }
+        .spacer {
+            padding-bottom: 4%;
+        }
+        .bar-button-default-md,
+        .bar-button-clear-md-default,
+        .bar-button-md-default {
+            color: white;
+        }
+    }
 }
