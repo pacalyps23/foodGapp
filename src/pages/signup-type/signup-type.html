@@ -20,11 +20,13 @@
 
 
 <ion-content padding class ="signupTypeBackground">
-  <h3>Welcome inside, {{name}}!</h3>
-  Your Email is: {{email}}
+  <div class="text">
+  <h3>Welcome, {{name}}!</h3>
+  <!--Your Email is: {{email}}-->
 
   <div padding align="center">
-    <h6>How would you like to help?</h6>
+    <h5>How would you like to help the world today?</h5>
+  </div>
   </div>
   <form>
   <ion-list radio-group>
@@ -32,13 +34,14 @@
       <ion-label>Volunteer</ion-label>
       <ion-radio (click)="volunteerTrue()" ></ion-radio>
     </ion-item>
+    <div class="spacer"></div>
     <ion-item>
       <ion-label>Donate</ion-label>
       <ion-radio (click)="donateTrue()"></ion-radio>
-
     </ion-item>
+    <div class="spacer"></div>
     <ion-item>
-      <ion-label>Food Relief Partner</ion-label>
+      <ion-label>Hunger Relief Partner</ion-label>
       <ion-radio (click)="partnerTrue()"></ion-radio>
     </ion-item>
   </ion-list>

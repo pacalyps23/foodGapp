@@ -61,5 +61,11 @@
         left: inherit;
         transform-origin: inherit;
         width: 20em;
-    } // .header{background:rgba(0, 0, 0, 0.64);}
+    } 
+    .header-md::after,
+    .tabs-md[tabsPlacement=“top”]>.tabbar::after,
+    .footer-md::before,
+    .tabs-md[tabsPlacement=“bottom”]>.tabbar::before {
+        background-image: none;
+    }
 }

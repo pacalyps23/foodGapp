@@ -1,32 +1,46 @@
-.ios, .md{
-
-
-  page-signup-type {
-
-    $toolbar-background-ios:black;
-    $popover-ios-background: black;
-    $popover-md-background:	black;
-
-    //.ion-header {}
-
-    .fixed-content{margin-top:0px !important;}
-
-    .toolbar-title{padding-left:0;}
-
-    .header{
-    background:rgba(0, 0, 0, 0.42);border-bottom: 3px solid #d29d10 !important;    border-radius: 2px;
-    }
-    .navBar{}
-
-    .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios{display:none;background: rgba(67, 137, 35, 0.62);}
-
-    .header-md .toolbar-background-md, .footer-md .toolbar-background-md{display:none;background: rgba(67, 137, 35, 0.62);}
-    .toolbar-title-md{text-align: center;}
-
-    .titleImg{    width: 4em;}
-
-
- .signupTypeBackground {
+.ios,
+.md {
+    page-signup-type {
+        $toolbar-background-ios: black;
+        $popover-ios-background: black;
+        $popover-md-background: black; //.ion-header {}
+        .fixed-content {
+            background: rgba(0, 0, 0, 0.22);
+            margin-top: 0px !important;
+        }
+        .toolbar-title {
+            padding-left: 0;
+            padding-bottom: 12px;
+        }
+        .toolbar-title-ios {
+            padding-bottom: 10px!important;
+        }
+        .header {
+            border-bottom: 3px solid #d29d10 !important;
+            border-radius: 2px;
+        }
+        .navBar {}
+        .header-ios .toolbar-background-ios,
+        .footer-ios .toolbar-background-ios {
+            display: none;
+            background: rgba(67, 137, 35, 0.62);
+        }
+        .header-md .toolbar-background-md,
+        .footer-md .toolbar-background-md {
+            display: none;
+            background: rgba(67, 137, 35, 0.62);
+        }
+        .toolbar-title-md {
+            text-align: center;
+        }
+        .titleImg {
+            width: 4em;
+        }
+        .bar-button-default {
+            color: #ffffff;
+            background-color: transparent;
+        }
+        .signupTypeBackground {
             background: url("../assets/img/pic7.jpg") no-repeat;
             text-align: center;
             position: relative;
@@ -36,13 +50,61 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-                color: aliceblue;
+            color: aliceblue;
         }
-.scroll-content {
-    background: rgba(67, 137, 35, 0.18);
+        .scroll-content {
+            background: rgba(67, 137, 35, 0.18);
+        }
+        .radio{
+
+        }
+
+        p{
+            margin-bottom: 0;
+        }
+        h1{
+                text-decoration: underline;
+        }
+        h5{
+                font-size: 27px;
+        }
+
+        .text{
+            text-shadow: 2px 2px #000000;
+        }
+        .item-md {
+            text-align: center;
+            padding-left: 16px;
+            padding-right: 0;
+            position: relative;
+            font-size: 1.6rem;
+            font-weight: normal;
+            text-transform: none;
+            color: #000;
+            background-color: rgb(210, 157, 16);
+            box-shadow: none;
+            transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 44px;
+        }
+        .spacer {
+            padding-bottom: 4%;
+        }
+        .list-md .item-block .item-inner {
+            border-bottom: none;
+        }
+        .item-radio-checked.item-md ion-label {
+            color: #ffffff;
+            font-size: 23px;
+            text-align: center;
+            width: 100%;
+        
+    }
+
+    
 }
 
-  }
 
-
+}
+.toolbar-title-ios {
+    padding-bottom: 10px!important;
 }

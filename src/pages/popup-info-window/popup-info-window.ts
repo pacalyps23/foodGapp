@@ -33,9 +33,8 @@ export class PopupInfoWindowPage {
     this.quantity = navParams.data.marker.quantity;
     this.perishable = navParams.data.marker.perishable;
     this.phone = navParams.data.marker.phone;
-    this.location = navParams.get('position');
 
-    console.log(this.location + "POPUP");
+    this.location = navParams.get('position');
 
   }
 
@@ -48,17 +47,16 @@ export class PopupInfoWindowPage {
   }
 
   pushPage() {
-      console.log(this.location + "POPUP2");
     this.navCtrl.push(WayPointMapPage, {
       title: this.title,
       quantity: this.quantity,
       perishable: this.perishable,
       phone: this.phone,
       location: this.location,
-      marker:this.marker
+      marker: this.marker
     });
 
-      this.viewCtrl.dismiss();
+    this.viewCtrl.dismiss();
   }
 
 

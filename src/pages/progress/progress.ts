@@ -41,7 +41,7 @@ export class ProgressPage {
     public navParams: NavParams,
     private launchNavigator: LaunchNavigator) {
       console.log(navParams.data);
-     setTimeout(function(){navCtrl.push(CompletePage)},15000);
+     setTimeout(function(){navCtrl.push(CompletePage)},10000);
   }
 
 

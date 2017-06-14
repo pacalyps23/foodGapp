@@ -27,6 +27,7 @@ import { HomePage } from '../pages/home/home';
 import { MapComponent } from '../components/map/map.component';
 import { SetAvailabilityPage } from '../pages/set-availability/set-availability';
 import { HealthPartnerPage } from '../pages/health-partner/health-partner';
+import { FakePopUpPage } from '../pages/fake-popup/fake-popup';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -55,6 +56,7 @@ import { PickupService } from '../app/services/pickup.service';
     MapComponent,
     SetAvailabilityPage,
     HealthPartnerPage,
+    FakePopUpPage,
     SignupTypePage
   ],
   imports: [
@@ -82,6 +84,7 @@ import { PickupService } from '../app/services/pickup.service';
     SignupTypePage,
     SetAvailabilityPage,
     HealthPartnerPage,
+    FakePopUpPage,
     SignupTypePage
 
   ],

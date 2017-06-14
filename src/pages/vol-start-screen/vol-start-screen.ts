@@ -65,22 +65,22 @@ export class VolStartScreenPage {
 
   displayGoogleMap() {
     this.geolocation.getCurrentPosition().then(position => {
-      //this.loader.dismiss();
-      let zipCode = new google.maps.LatLng( 39.746323, -75.563192);
-      // let current = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      this.loader.dismiss();
+      // let zipCode = new google.maps.LatLng( 39.746323, -75.563192);
+      let current = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       let mapOptions = {
-        center: zipCode,
+        center: current,
         disableDefaultUI: true,
         zoom: 14,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
 
       this.map = new google.maps.Map(this.mapContainer.nativeElement, mapOptions);
-      this.myMarker(zipCode);
+      this.myMarker(current);
 
       const markers = function () {
         this.getMarkers();
-        this.loader.dismiss();
+        // this.loader.dismiss();
       }
       setTimeout(markers.bind(this), 1000);
 
@@ -119,14 +119,6 @@ export class VolStartScreenPage {
   }
 
   loadPeople() {
-    // this.pickupService.retrieveData((data) => {
-    //   this.addMarkersToMap(data);
-    // });
-
-    // this.pickupService.retrieveData(this.data)
-    // .then(data => {
-    //   this.info = data;
-    // });
   }
 
 
@@ -134,6 +126,7 @@ export class VolStartScreenPage {
   markerInfo(marker) {
 console.log(marker.position+ "HERE");
     marker.addListener('click', () => {
+
       // var position = new google.maps.LatLng(marker.latitude, marker.longitude);
       let popover = this.popoverCtrl.create(PopupInfoWindowPage, { marker: marker, position: marker.position });
       popover.present({
