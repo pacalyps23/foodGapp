@@ -32,7 +32,7 @@
             padding-bottom: 0;
         }
         .button {
-            width: 100%;
+            width: 100%;margin-top: -23%;
         }
         .completeBackground {
             background: url("../assets/img/pic11.jpg");
@@ -71,5 +71,9 @@
         .scroll-content {
             padding: 7px!important;
         }
+ion-app.md [padding], ion-app.md [padding] .scroll-content {
+    padding: 7px;
+}
+
     }
 }
